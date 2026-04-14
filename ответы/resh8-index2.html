@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="task.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Решение задачи 8 - Возведение в степень</title>
+</head>
+<body>
+    <div class="center-logo">
+        <img src="images/logo.png" alt="Логотип">
+    </div>
+
+    <div class="exit-button">
+        <a href="index2.html" class="exit-link">
+            <span class="exit-text">← Вернуться к задачам</span>
+        </a>
+    </div>
+
+    <div class="task-title">
+        Задача №8: Возведение в степень
+    </div>
+
+    <div class="code-container">
+        <div class="code-header">
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+        </div>
+
+        <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int a, b, i;
+    int result = 1;
+    
+    printf("Введите число A: ");
+    scanf("%d", &a);
+    
+    printf("Введите степень B: ");
+    scanf("%d", &b);
+    
+    for(i = 1; i <= b; i++) {
+        result = result * a;
+    }
+    
+    printf("%d в степени %d = %d\n", a, b, result);
+    
+    return 0;
+}</code></pre>
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="task.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Решение задачи 10 - Таблица умножения</title>
+</head>
+<body>
+    <div class="center-logo">
+        <img src="images/logo.png" alt="Логотип">
+    </div>
+
+    <div class="exit-button">
+        <a href="index2.html" class="exit-link">
+            <span class="exit-text">← Вернуться к задачам</span>
+        </a>
+    </div>
+
+    <div class="task-title">
+        Задача №13: Функция возведения в степень 
+    </div>
+
+    <div class="code-container">
+        <div class="code-header">
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+        </div>
+
+        <pre><code>#include <stdio.h>
+
+int power(int base, int exp);
+
+int main() {
+    int b, e;
+
+    printf("Введите основание и показатель: ");
+    scanf("%d %d", &b, &e);
+
+    printf("%d^%d = %d\n", b, e, power(b, e));
+    return 0;
+}
+
+
+int power(int base, int exp) {
+    int result = 1;
+    for (int i = 0; i < exp; i++) {
+        result *= base;
+    }
+    return result;
+}
+</code></pre>
+    </div>
+</body>
+</html>

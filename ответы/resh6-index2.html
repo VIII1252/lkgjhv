@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="task.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Решение задачи 6 - Площадь и периметр</title>
+</head>
+<body>
+    <div class="center-logo">
+        <img src="images/logo.png" alt="Логотип">
+    </div>
+
+    <div class="exit-button">
+        <a href="index2.html" class="exit-link">
+            <span class="exit-text">← Вернуться к задачам</span>
+        </a>
+    </div>
+
+    <div class="task-title">
+        Задача №6: Площадь и периметр
+    </div>
+
+    <div class="code-container">
+        <div class="code-header">
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+        </div>
+
+        <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int length, width;
+    
+    printf("Введите длину: ");
+    scanf("%d", &length);
+    
+    printf("Введите ширину: ");
+    scanf("%d", &width);
+    
+    printf("Площадь: %d\n", length * width);
+    printf("Периметр: %d\n", 2 * (length + width));
+    
+    return 0;
+}</code></pre>
+    </div>
+</body>
+</html>

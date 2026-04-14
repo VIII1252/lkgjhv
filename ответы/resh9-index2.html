@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="task.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Решение задачи 9 - Сортировка трех чисел</title>
+</head>
+<body>
+    <div class="center-logo">
+        <img src="images/logo.png" alt="Логотип">
+    </div>
+
+    <div class="exit-button">
+        <a href="index2.html" class="exit-link">
+            <span class="exit-text">← Вернуться к задачам</span>
+        </a>
+    </div>
+
+    <div class="task-title">
+        Задача №9: Сортировка трех чисел
+    </div>
+
+    <div class="code-container">
+        <div class="code-header">
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+        </div>
+
+        <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int a, b, c;
+    int min, mid, max;
+    
+    printf("Введите три числа: ");
+    scanf("%d %d %d", &a, &b, &c);
+    
+    min = a;
+    if (b < min) min = b;
+    if (c < min) min = c;
+    
+    max = a;
+    if (b > max) max = b;
+    if (c > max) max = c;
+    
+    mid = a + b + c - min - max;
+    
+    printf("%d %d %d\n", min, mid, max);
+    
+    return 0;
+}</code></pre>
+    </div>
+</body>
+</html>

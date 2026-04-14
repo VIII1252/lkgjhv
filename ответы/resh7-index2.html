@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="task.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Решение задачи 7 - Положительные и отрицательные</title>
+</head>
+<body>
+    <div class="center-logo">
+        <img src="images/logo.png" alt="Логотип">
+    </div>
+
+    <div class="exit-button">
+        <a href="index2.html" class="exit-link">
+            <span class="exit-text">← Вернуться к задачам</span>
+        </a>
+    </div>
+
+    <div class="task-title">
+        Задача №7: Положительные и отрицательные
+    </div>
+
+    <div class="code-container">
+        <div class="code-header">
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+        </div>
+
+        <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int number;
+    int positive = 0;
+    int negative = 0;
+    
+    printf("Введите 7 чисел (положительных и отрицательных):\n");
+    
+    for (int i = 0; i < 7; i++) {
+        scanf("%d", &number);
+        
+        if (number > 0) {
+            positive++;
+        } else if (number < 0) {
+            negative++;
+        }
+    }
+    
+    printf("Положительных: %d\n", positive);
+    printf("Отрицательных: %d\n", negative);
+    
+    return 0;
+}</code></pre>
+    </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="prac3.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>labaratory work 3</title>
+</head>
+<body>
+  <form action="https://jsonplaceholder.typicode.com/posts" method="post">
+    <table  style="border-spacing: 10px" border="0" align="center">
+      <tr>
+        <td style="text-align: right;">
+          <label for="second_name">Фамилия</label>
+          <input type="text" id="second_name" name="second_name" required>
+        </td>
+        <td rowspan="4">
+          <p style="text-align: center;">Доставка</p>
+          <ul style="list-style: none; text-align: left;">
+            <li>
+              <label for="post">Почта</label>
+              <input type="radio" name="delivery_method" value="post" id="post">
+            </li>
+            <li>
+              <label for="courier">Курьер</label>
+              <input type="radio" name="delivery_method" value="courier" id="courier">
+            </li>
+            <li>
+              <label for="pickup">Самовывоз</label>
+              <input type="radio" name="delivery_method" value="pickup" id="pickup" checked>
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: right;">
+          <label for="password">Пароль</label>
+          <input type="password" name="password" id="password" required>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: right;">
+          <label for="address">Адрес получателя</label>
+          <input type="text" name="address" id="address" required>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: right;">
+          <label for="quality">Количество</label>
+          <input type="number" name="quality" id="quality" min="0" max="100" required>
+        </td>
+      </tr>
+      <tr>
+        <td  rowspan="3">
+          <label for="name_product">Наименование товара</label>
+          <select name="name-product" id="name_product">
+            <option value="">Выберите продукт</option>
+            <option value="1">Банан</option>
+            <option value="2">Яблоки</option>
+            <option value="3">Гранат</option>
+            <option value="4">Киви</option>
+            <option value="5">Дыня</option>
+          </select>
+        </td>
+        <td>
+          <label for="passing_order"><i>Требуется проходной ордер</i></label>
+          <input type="checkbox" id="passing_order" required checked>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="addit-info"><b>Дополнительная информация:</b><br></label>
+          <textarea name="additional-info" id="addit-info" rows="5" cols="30"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">
+          <button type="submit" class="btn-submit">Отправить</button>
+          <button type="reset" class="btn-reset">Обновить</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

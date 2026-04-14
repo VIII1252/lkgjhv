@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="task.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Решение задачи 11с</title>
+</head>
+<body>
+    <div class="center-logo">
+        <img src="images/logo.png" alt="Логотип">
+    </div>
+
+    <div class="exit-button">
+        <a href="index2.html" class="exit-link">
+            <span class="exit-text">← Вернуться к задачам</span>
+        </a>
+    </div>
+
+    <div class="task-title">
+        Задача №11: Сумма чисел от 1 до N
+    </div>
+
+    <div class="code-container">
+        <div class="code-header">
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+        </div>
+
+        <pre><code>#include <stdio.h>
+
+int main() {
+    int n, i = 1, sum = 0;
+
+    printf("Введите N: ");
+    scanf("%d", &n);
+
+    while (i <= n) {
+        sum += i;  // то же самое, что sum = sum + i;
+        i++;
+    }
+
+    printf("Сумма от 1 до %d = %d\n", n, sum);
+    return 0;
+}</code></pre>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="task.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Решение задачи 4 - Массив</title>
+</head>
+<body>
+    <div class="center-logo">
+        <img src="images/logo.png" alt="Логотип">
+    </div>
+
+    <div class="exit-button">
+        <a href="index2.html" class="exit-link">
+            <span class="exit-text">← Вернуться к задачам</span>
+        </a>
+    </div>
+
+    <div class="task-title">
+        Задача №4: Массив из 5 чисел
+    </div>
+
+    <div class="code-container">
+        <div class="code-header">
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+        </div>
+
+        <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+
+    int numbers[5] = {10, 20, 30, 40, 50};
+    
+    printf("Элементы массива:\n");
+    
+    for (int i = 0; i < 5; i++) {
+        printf("numbers[%d] = %d\n", i, numbers[i]);
+    }
+    
+    return 0;
+}</code></pre>
+    </div>
+</body>
+</html> 
