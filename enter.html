@@ -1,17 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <link rel="stylesheet" href="enter.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вход — Задачник</title>
+    <link rel="stylesheet" href="enter.css">
 </head>
 <body>
-    
-    <div class="container">
+
+    <div class="background-glow glow-1"></div>
+    <div class="background-glow glow-2"></div>
+
+    <header class="topbar">
+        <div class="logo">📘 Задачник</div>
+        <nav>
+            <a href="main.html">🏠 Главная</a>
+            <a href="#">📚 Статьи</a>
+            <a href="#">🧠 Задачи</a>
+        </nav>
+    </header>
+
+    <main class="container">
         <div class="register-box">
-            <h2>Вход</h2>
-            
+
+            <div class="title-block">
+                <span class="accent-line"></span>
+                <h2>Вход</h2>
+            </div>
+
+            <p class="subtitle">
+                С возвращением. Войдите в аккаунт чтобы продолжить обучение.
+            </p>
+
             <form>
                 <div class="input-group">
                     <label>Email или имя пользователя</label>
@@ -23,14 +43,16 @@
                     <input type="password" placeholder="Введите пароль">
                 </div>
 
-                <button type="submit" class="register-btn">Войти</button>
+                <button type="button" class="register-btn" onclick="window.location.href='main.html'">Войти</button>
 
                 <div class="login-link">
-                    Нет аккаунта? <a href="login.html">Зарегистрироваться</a>
+                    Нет аккаунта?
+                    <a href="login.html">Зарегистрироваться</a>
                 </div>
             </form>
+
         </div>
-    </div>
+    </main>
 
 </body>
 </html>

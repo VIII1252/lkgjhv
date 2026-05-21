@@ -1,46 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <link rel="stylesheet" href="login.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация — Задачник</title>
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    
-    <div class="container">
+
+    <div class="background-glow glow-1"></div>
+    <div class="background-glow glow-2"></div>
+
+    <header class="topbar">
+        <div class="logo"> Задачник</div>
+
+        <nav>
+            <a href="main.html"> Главная</a>
+            <a href=""> Статьи</a>
+            <a href=""> Профиль</a>
+        </nav>
+    </header>
+
+    <main class="container">
         <div class="register-box">
-            <h2>Регистрация</h2>
-            
+
+            <div class="title-block">
+                <span class="accent-line"></span>
+                <h2>Регистрация</h2>
+            </div>
+
+            <p class="subtitle">
+                Создайте аккаунт и получите доступ ко всем задачам и статьям.
+            </p>
+
             <form>
+
                 <div class="input-group">
                     <label>Имя пользователя</label>
-                    <input type="text" placeholder="Введите имя" required>
+                    <input type="text" placeholder="Введите имя">
                 </div>
 
                 <div class="input-group">
                     <label>Email</label>
-                    <input type="email" placeholder="Введите email" required>
+                    <input type="email" placeholder="Введите email">
                 </div>
 
                 <div class="input-group">
                     <label>Пароль</label>
-                    <input type="password" placeholder="Введите пароль" required>
+                    <input type="password" placeholder="Введите пароль">
                 </div>
 
                 <div class="input-group">
                     <label>Подтвердите пароль</label>
-                    <input type="password" placeholder="Повторите пароль" required>
+                    <input type="password" placeholder="Повторите пароль">
                 </div>
 
-                <button type="submit" class="register-btn">Зарегистрироваться</button>
+                <button type="button" class="register-btn" onclick="window.location.href='enter.html'">Зарегистрироваться</button>
 
                 <div class="login-link">
-                    Уже есть аккаунт? <a href="enter.html">Войти</a>
+                    Уже есть аккаунт?
+                    <a href="enter.html">Войти</a>
                 </div>
+
             </form>
         </div>
-    </div>
+    </main>
 
 </body>
 </html>
