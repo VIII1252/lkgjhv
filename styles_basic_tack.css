@@ -1,0 +1,435 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2a2a 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    padding-bottom: 50px;
+}
+
+/* Шапка */
+.taskC {
+    background: linear-gradient(90deg, #2A2724 0%, #3a3530 100%);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    margin-bottom: 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.Zag {
+    color: #8FF7D7;
+    -webkit-text-stroke: 1px #59ddb6;
+    font-size: 32px;
+    text-shadow: 0 2px 5px rgba(89, 221, 182, 0.3);
+    letter-spacing: 1px;
+}
+
+/* Навигация */
+.nav-menu {
+    position: fixed;
+    top: 100px;
+    left: 30px;
+    z-index: 90;
+}
+
+.nav-button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 28px;
+    background: rgba(42, 39, 36, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(89, 221, 182, 0.2);
+    border-radius: 50px;
+    color: #8FF7D7;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button:hover {
+    background: rgba(89, 221, 182, 0.15);
+    border-color: #59ddb6;
+    transform: translateX(5px);
+    box-shadow: 0 6px 25px rgba(89, 221, 182, 0.15);
+}
+
+.nav-icon {
+    transition: transform 0.3s ease;
+    color: #8FF7D7;
+}
+
+.nav-button:hover .nav-icon {
+    transform: translateX(-5px);
+}
+
+.nav-text {
+    position: relative;
+}
+
+.nav-text::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #59ddb6;
+    transition: width 0.3s ease;
+}
+
+.nav-button:hover .nav-text::after {
+    width: 100%;
+}
+
+/* Контейнер задач */
+.tasks-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Карточка задачи */
+.task-item {
+    background: rgba(42, 39, 36, 0.8);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #3A3632;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.task-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border-color: #59ddb6;
+}
+
+.answer {
+    padding: 20px 25px;
+    border-bottom: 1px solid #3A3632;
+}
+
+.potvet {
+    color: #ebe2d4;
+    font-size: 18px;
+    line-height: 1.5;
+    opacity: 0.95;
+}
+
+.potvet i {
+    color: #8FF7D7;
+    font-style: italic;
+}
+
+.otvet1-index2 {
+    background: #1f1d1b;
+    padding: 12px 25px;
+    transition: all 0.3s ease;
+}
+
+.otvet1-index2:hover {
+    background: #59ddb6;
+}
+
+.otvet1-index2:hover .aotvet {
+    color: #2A2724;
+}
+
+.aotvet {
+    text-decoration: none;
+    color: #79d9bd;
+    font-weight: 500;
+    font-size: 16px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Кнопка наверх */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #2A2724, #3a3530);
+    border-radius: 50px;
+    color: #8FF7D7;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+    opacity: 0.7;
+    border: 1px solid #59ddb6;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-top:hover {
+    transform: translateY(-5px);
+    opacity: 1;
+    box-shadow: 0 6px 20px rgba(89, 221, 182, 0.2);
+}
+
+.arrow {
+    font-size: 24px;
+    line-height: 1;
+}
+
+.scroll-text {
+    font-size: 14px;
+}
+
+
+/* =============================================
+   МОДАЛЬНОЕ ОКНО
+   ============================================= */
+
+/*
+  .modal-overlay — тёмный полупрозрачный фон на весь экран.
+  position: fixed — прилипает к окну браузера, не зависит от скролла.
+  inset: 0 — растягивается на весь viewport (top/right/bottom/left = 0).
+  z-index: 500 — выше шапки (z-index: 100) и навигации (z-index: 90).
+  
+  По умолчанию скрыт: opacity: 0 + pointer-events: none.
+  Когда JS добавляет класс .active — становится видимым.
+*/
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+    /* Анимация появления */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/*
+  .modal-window — само белое (тёмное) окно внутри оверлея.
+  Анимируется через transform: scale — появляется с лёгким «вырастанием».
+*/
+.modal-window {
+    background: rgba(30, 30, 30, 0.98);
+    border: 2px solid #59ddb6;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 750px;
+    max-height: 85vh;         /* не выходит за экран по высоте */
+    overflow-y: auto;         /* скролл внутри окна, если код длинный */
+    box-shadow: 0 20px 60px rgba(89, 221, 182, 0.2);
+
+    transform: scale(0.93);
+    transition: transform 0.25s ease;
+}
+
+.modal-overlay.active .modal-window {
+    transform: scale(1);
+}
+
+/* Шапка модалки */
+.modal-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 24px;
+    border-bottom: 1px solid #3A3632;
+    position: sticky;     /* прилипает при прокрутке содержимого */
+    top: 0;
+    background: rgba(30, 30, 30, 0.98);
+    z-index: 1;
+}
+
+.modal-dots {
+    display: flex;
+    gap: 8px;
+}
+
+/* Три цветные точки как в macOS-терминале */
+.code-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #dc3545;
+    display: inline-block;
+}
+
+.code-dot:nth-child(2) { background: #ffc107; }
+.code-dot:nth-child(3) { background: #59ddb6; }
+
+.modal-title {
+    flex: 1;              /* занимает всё свободное место */
+    color: #8FF7D7;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Кнопка закрытия ✕ */
+.modal-close {
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    margin-left: auto;
+}
+
+.modal-close:hover {
+    background: rgba(220, 53, 69, 0.15);
+    color: #dc3545;
+}
+
+/* Тело модалки — сюда вставляется .code-container из файла */
+.modal-body {
+    padding: 24px;
+}
+
+/* Состояние загрузки */
+.modal-loading {
+    text-align: center;
+    color: #59ddb6;
+    font-size: 16px;
+    padding: 40px 0;
+}
+
+/* Сообщение об ошибке */
+.modal-error {
+    text-align: center;
+    color: #dc3545;
+    font-size: 15px;
+    padding: 30px 0;
+}
+
+/*
+  Стили для блока .code-container, который приходит из файлов решений.
+  Дублируем нужные правила из task.css, чтобы код выглядел правильно внутри модалки.
+*/
+.modal-body .code-container {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    animation: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.modal-body .code-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #3A3632;
+}
+
+.modal-body pre {
+    margin: 0;
+    overflow-x: auto;
+    background: #1e1e1e;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.modal-body code {
+    color: #59ddb6;
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+/* Скроллбар внутри модалки */
+.modal-window::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-window::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+.modal-window::-webkit-scrollbar-thumb {
+    background: #59ddb6;
+    border-radius: 3px;
+}
+
+
+/* =============================================
+   АДАПТИВНОСТЬ
+   ============================================= */
+
+@media (max-width: 768px) {
+    .Zag {
+        font-size: 24px;
+    }
+    
+    .tasks-container {
+        padding: 10px;
+    }
+    
+    .potvet {
+        font-size: 16px;
+    }
+    
+    .scroll-text {
+        display: none;
+    }
+    
+    .scroll-top {
+        padding: 15px;
+    }
+    
+    .nav-menu {
+        top: 90px;
+        left: 15px;
+    }
+    
+    .nav-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .modal-window {
+        max-height: 90vh;
+    }
+
+    .modal-body {
+        padding: 16px;
+    }
+
+    .modal-body code {
+        font-size: 13px;
+    }
+}

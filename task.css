@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2a2a 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 100px; /* Отступ сверху для заголовка */
+    padding-bottom: 50px;
+}
+
+/* Логотип в центре */
+.center-logo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    opacity: 0.15;
+    pointer-events: none;
+    animation: floatLogo 6s ease-in-out infinite;
+}
+
+.center-logo img {
+    width: 300px;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(89, 221, 182, 0.3));
+}
+
+@keyframes floatLogo {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+}
+
+/* Кнопка выхода */
+.exit-button {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    z-index: 100;
+}
+
+.exit-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: rgba(42, 39, 36, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(220, 53, 69, 0.3);
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.exit-link:hover {
+    background: rgba(220, 53, 69, 0.15);
+    border-color: #dc3545;
+    transform: translateX(-5px);
+    box-shadow: 0 6px 25px rgba(220, 53, 69, 0.15);
+}
+
+.exit-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.exit-link:hover .exit-icon {
+    transform: translateX(-3px);
+}
+
+.exit-text {
+    color: #dc3545;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* Заголовок задачи */
+.task-title {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    color: #8FF7D7;
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(89, 221, 182, 0.3);
+    z-index: 100;
+    background: rgba(42, 39, 36, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 12px 24px;
+    border-radius: 50px;
+    border: 1px solid #59ddb6;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Блок с кодом */
+.code-container {
+    background: rgba(30, 30, 30, 0.95);
+    backdrop-filter: blur(10px);
+    border: 2px solid #59ddb6;
+    border-radius: 15px;
+    padding: 30px;
+    width: 700px;
+    max-width: 90vw;
+    box-shadow: 0 10px 40px rgba(89, 221, 182, 0.15);
+    position: relative;
+    z-index: 10;
+    animation: glowPulse 3s infinite;
+    margin-top: 20px; /* Отступ от верха */
+    margin-bottom: 20px;
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 10px 40px rgba(89, 221, 182, 0.15);
+    }
+    50% {
+        box-shadow: 0 10px 50px rgba(89, 221, 182, 0.3);
+    }
+}
+
+.code-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #3A3632;
+}
+
+.code-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #dc3545;
+}
+
+.code-dot:nth-child(2) {
+    background: #ffc107;
+}
+
+.code-dot:nth-child(3) {
+    background: #59ddb6;
+}
+
+pre {
+    margin: 0;
+    overflow-x: auto;
+    background: #1e1e1e;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+code {
+    color: #59ddb6;
+    font-size: 18px;
+    line-height: 1.6;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+/* Строки кода */
+.code-line {
+    display: block;
+    color: #8FF7D7;
+}
+
+/* Кнопка копирования */
+.copy-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(89, 221, 182, 0.1);
+    border: 1px solid #59ddb6;
+    color: #8FF7D7;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    z-index: 20;
+}
+
+.copy-button:hover {
+    background: #59ddb6;
+    color: #2A2724;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    body {
+        padding-top: 120px;
+    }
+    
+    .code-container {
+        width: 95%;
+        padding: 20px;
+        margin-top: 10px;
+    }
+
+    code {
+        font-size: 14px;
+    }
+
+    .center-logo img {
+        width: 200px;
+    }
+
+    .task-title {
+        font-size: 16px;
+        padding: 8px 16px;
+        top: 20px;
+        right: 20px;
+        max-width: 250px;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .exit-button {
+        top: 20px;
+        left: 20px;
+    }
+
+    .exit-link {
+        padding: 8px 16px;
+    }
+
+    .exit-text {
+        font-size: 14px;
+    }
+    
+    pre {
+        padding: 10px;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+    .task-title {
+        max-width: 180px;
+        font-size: 14px;
+    }
+    
+    .exit-text {
+        display: none;
+    }
+    
+    .exit-link {
+        padding: 10px;
+        border-radius: 50%;
+    }
+}

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="styles_basic_tack.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Базовые задачи C</title>
+</head>
+<body>
+    <div class="taskC">
+        <h1 class="Zag">Базовые задачи</h1>
+    </div>
+
+    <div class="nav-menu">
+        <a href="index.html" class="nav-button">
+            <svg class="nav-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span class="nav-text">Вернуться к задачам</span>
+        </a>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-window">
+            <div class="modal-header">
+                <span class="modal-title" id="modalTitle">Решение</span>
+                <button class="modal-close" id="modalClose" aria-label="Закрыть">✕</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <div class="tasks-container">
+
+        <!-- Задача 1 -->
+        <div class="task-item">
+            <div class="answer">
+                <p class="potvet">1. <i>Создайте программу на C, которая объявляет целочисленную переменную age, присваивает ей значение 25 и выводит её значение на экран.</i></p>
+            </div>
+            <div class="otvet1-index2">
+                <a class="aotvet modal-trigger" href="#"
+                   data-title="Задача №1: Переменная age"
+                   data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int age;
+    age = 25;
+    printf(&quot;age = %d\n&quot;, age);
+    return 0;
+}">Посмотреть решение →</a>
+            </div>
+        </div>
+
+        <!-- Задача 2 -->
+        <div class="task-item">
+            <div class="answer">
+                <p class="potvet">2. <i>Создайте константу с числом Пи «3.14159» и выведите её.</i></p>
+            </div>
+            <div class="otvet1-index2">
+                <a class="aotvet modal-trigger" href="#"
+                   data-title="Задача №2: Константа Пи"
+                   data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    const double PI = 3.14159;
+    printf(&quot;Значение числа Пи: %f\n&quot;, PI);
+    return 0;
+}">Посмотреть решение →</a>
+            </div>
+        </div>
+
+        <!-- Задача 3 -->
+        <div class="task-item">
+            <div class="answer">
+                <p class="potvet">3. <i>Напишите программу, которая считывает целое число с клавиатуры и проверяет, чётное оно или нечётное.</i></p>
+            </div>
+            <div class="otvet1-index2">
+                <a class="aotvet modal-trigger" href="#"
+                   data-title="Задача №3: Чётное или нечётное"
+                   data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int number;
+
+    printf(&quot;Введите целое число: &quot;);
+    scanf(&quot;%d&quot;, &amp;number);
+
+    if (number % 2 == 0) {
+        printf(&quot;Число %d - чётное\n&quot;, number);
+    } else {
+        printf(&quot;Число %d - нечётное\n&quot;, number);
+    }
+
+    return 0;
+}">Посмотреть решение →</a>
+            </div>
+        </div>
+
+        <!-- Задача 4 -->
+        <div class="task-item">
+            <div class="answer">
+                <p class="potvet">4. <i>Создайте массив из 5 чисел, заполните его и выведите все элементы.</i></p>
+            </div>
+            <div class="otvet1-index2">
+                <a class="aotvet modal-trigger" href="#"
+                   data-title="Задача №4: Массив из 5 чисел"
+                   data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int numbers[5] = {10, 20, 30, 40, 50};
+
+    printf(&quot;Элементы массива:\n&quot;);
+
+    for (int i = 0; i &lt; 5; i++) {
+        printf(&quot;numbers[%d] = %d\n&quot;, i, numbers[i]);
+    }
+
+    return 0;
+}">Посмотреть решение →</a>
+            </div>
+        </div>
+
+        <!-- Задача 5 -->
+        <div class="task-item">
+            <div class="answer">
+                <p class="potvet">5. <i>Напишите программу, которая проверяет, является ли введённое число простым (делится только на 1 и на себя).</i></p>
+            </div>
+            <div class="otvet1-index2">
+                <a class="aotvet modal-trigger" href="#"
+                   data-title="Задача №5: Простое число"
+                   data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int number, i, isPrime = 1;
+
+    printf(&quot;Введите число: &quot;);
+    scanf(&quot;%d&quot;, &amp;number);
+
+    for (i = 2; i &lt; number; i++) {
+        if (number % i == 0) {
+            isPrime = 0;
+            break;
+        }
+    }
+
+    if (isPrime == 1) {
+        printf(&quot;%d - простое число\n&quot;, number);
+    } else {
+        printf(&quot;%d - не простое число\n&quot;, number);
+    }
+
+    return 0;
+}">Посмотреть решение →</a>
+            </div>
+        </div>
+
+        <!-- Задача 6 -->
+        <div class="task-item">
+            <div class="answer">
+                <p class="potvet">6. <i>Напишите программу, которая запрашивает длину и ширину прямоугольника (целые числа), вычисляет и выводит его площадь и периметр.</i></p>
+            </div>
+            <div class="otvet1-index2">
+                <a class="aotvet modal-trigger" href="#"
+                   data-title="Задача №6: Площадь и периметр"
+                   data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int length, width;
+
+    printf(&quot;Введите длину: &quot;);
+    scanf(&quot;%d&quot;, &amp;length);
+
+    printf(&quot;Введите ширину: &quot;);
+    scanf(&quot;%d&quot;, &amp;width);
+
+    printf(&quot;Площадь: %d\n&quot;, length * width);
+    printf(&quot;Периметр: %d\n&quot;, 2 * (length + width));
+
+    return 0;
+}">Посмотреть решение →</a>
+            </div>
+        </div>
+
+        <!-- Задача 7 -->
+        <div class="task-item">
+            <div class="answer">
+                <p class="potvet">7. <i>Напишите программу, которая запрашивает 7 чисел (могут быть положительными и отрицательными) и подсчитывает, сколько среди них положительных и сколько отрицательных.</i></p>
+            </div>
+            <div class="otvet1-index2">
+                <a class="aotvet modal-trigger" href="#"
+                   data-title="Задача №7: Положительные и отрицательные"
+                   data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int number, positive = 0, negative = 0;
+
+    printf(&quot;Введите 7 чисел:\n&quot;);
+
+    for (int i = 0; i &lt; 7; i++) {
+        scanf(&quot;%d&quot;, &amp;number);
+        if (number &gt; 0) positive++;
+        else if (number &lt; 0) negative++;
+    }
+
+    printf(&quot;Положительных: %d\n&quot;, positive);
+    printf(&quot;Отрицательных: %d\n&quot;, negative);
+
+    return 0;
+}">Посмотреть решение →</a>
+            </div>
+        </div>
+
+        <!-- Задача 8 -->
+        <div class="task-item">
+            <div class="answer">
+                <p class="potvet">8. <i>Напишите программу, которая возводит число A в степень B (A и B вводятся с клавиатуры) без использования функции pow().</i></p>
+            </div>
+            <div class="otvet1-index2">
+                <a class="aotvet modal-trigger" href="#"
+                   data-title="Задача №8: Степень без pow()"
+                   data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int a, b, i, result = 1;
+
+    printf(&quot;Введите число A: &quot;);
+    scanf(&quot;%d&quot;, &amp;a);
+
+    printf(&quot;Введите степень B: &quot;);
+    scanf(&quot;%d&quot;, &amp;b);
+
+    for (i = 1; i &lt;= b; i++) {
+        result = result * a;
+    }
+
+    printf(&quot;%d в степени %d = %d\n&quot;, a, b, result);
+
+    return 0;
+}">Посмотреть решение →</a>
+            </div>
+        </div>
+
+        <!-- Задача 9 -->
+        <div class="task-item">
+            <div class="answer">
+                <p class="potvet">9. <i>Напишите программу, которая запрашивает три числа и выводит их в порядке возрастания.</i></p>
+            </div>
+            <div class="otvet1-index2">
+                <a class="aotvet modal-trigger" href="#"
+                   data-title="Задача №9: Сортировка трёх чисел"
+                   data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int a, b, c, min, mid, max;
+
+    printf(&quot;Введите три числа: &quot;);
+    scanf(&quot;%d %d %d&quot;, &amp;a, &amp;b, &amp;c);
+
+    min = a;
+    if (b &lt; min) min = b;
+    if (c &lt; min) min = c;
+
+    max = a;
+    if (b &gt; max) max = b;
+    if (c &gt; max) max = c;
+
+    mid = a + b + c - min - max;
+
+    printf(&quot;%d %d %d\n&quot;, min, mid, max);
+
+    return 0;
+}">Посмотреть решение →</a>
+            </div>
+        </div>
+
+        <!-- Задача 10 -->
+        <div class="task-item">
+            <div class="answer">
+                <p class="potvet">10. <i>Выведите таблицу умножения на 5 (от 1 до 10) с помощью цикла for.</i></p>
+            </div>
+            <div class="otvet1-index2">
+                <a class="aotvet modal-trigger" href="#"
+                   data-title="Задача №10: Таблица умножения"
+                   data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int i;
+    for (i = 1; i &lt;= 10; i++) {
+        printf(&quot;5 * %d = %d\n&quot;, i, 5 * i);
+    }
+    return 0;
+}">Посмотреть решение →</a>
+            </div>
+        </div>
+
+        <!-- Задача 11 -->
+        <div class="task-item">
+            <div class="answer">
+                <p class="potvet">11. <i>Пользователь вводит натуральное число N. Найти сумму всех чисел от 1 до N (использовать цикл while).</i></p>
+            </div>
+            <div class="otvet1-index2">
+                <a class="aotvet modal-trigger" href="#"
+                   data-title="Задача №11: Сумма от 1 до N"
+                   data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int n, i = 1, sum = 0;
+
+    printf(&quot;Введите N: &quot;);
+    scanf(&quot;%d&quot;, &amp;n);
+
+    while (i &lt;= n) {
+        sum += i;  // то же самое, что sum = sum + i
+        i++;
+    }
+
+    printf(&quot;Сумма от 1 до %d = %d\n&quot;, n, sum);
+    return 0;
+}">Посмотреть решение →</a>
+            </div>
+        </div>
+
+        <!-- Задача 12 -->
+        <div class="task-item">
+            <div class="answer">
+                <p class="potvet">12. <i>Пользователь вводит 5 чисел. Выведите их в обратном порядке.</i></p>
+            </div>
+            <div class="otvet1-index2">
+                <a class="aotvet modal-trigger" href="#"
+                   data-title="Задача №12: Массивы — обратный порядок"
+                   data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5], i;
+
+    printf(&quot;Введите 5 чисел:\n&quot;);
+    for (i = 0; i &lt; 5; i++) {
+        scanf(&quot;%d&quot;, &amp;arr[i]);
+    }
+
+    printf(&quot;В обратном порядке:\n&quot;);
+    for (i = 4; i &gt;= 0; i--) {
+        printf(&quot;%d &quot;, arr[i]);
+    }
+    printf(&quot;\n&quot;);
+
+    return 0;
+}">Посмотреть решение →</a>
+            </div>
+        </div>
+
+        <!-- Задача 13 -->
+        <div class="task-item">
+            <div class="answer">
+                <p class="potvet">13. <i>Напишите функцию power(base, exp), которая возвращает base в степени exp (exp — целое неотрицательное число). В main вызовите её.</i></p>
+            </div>
+            <div class="otvet1-index2">
+                <a class="aotvet modal-trigger" href="#"
+                   data-title="Задача №13: Функция power()"
+                   data-code="#include &lt;stdio.h&gt;
+
+int power(int base, int exp);
+
+int main() {
+    int b, e;
+
+    printf(&quot;Введите основание и показатель: &quot;);
+    scanf(&quot;%d %d&quot;, &amp;b, &amp;e);
+
+    printf(&quot;%d^%d = %d\n&quot;, b, e, power(b, e));
+    return 0;
+}
+
+int power(int base, int exp) {
+    int result = 1;
+    for (int i = 0; i &lt; exp; i++) {
+        result *= base;
+    }
+    return result;
+}">Посмотреть решение →</a>
+            </div>
+        </div>
+<!-- Задача 14 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">14. <i>Пользователь вводит температуру в градусах Цельсия. Переведите её в градусы Фаренгейта.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №16: Перевод температуры"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    float celsius, fahrenheit;
+
+    printf(&quot;Введите температуру в Цельсиях: &quot;);
+    scanf(&quot;%f&quot;, &amp;celsius);
+
+    fahrenheit = celsius * 9 / 5 + 32;
+
+    printf(&quot;Температура в Фаренгейтах: %.2f\n&quot;, fahrenheit);
+
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+<!-- Задача 15 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">15. <i>Выведите числа от 1 до 20 с помощью цикла for.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №17: Числа от 1 до 20"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+
+    for(int i = 1; i &lt;= 20; i++) {
+        printf(&quot;%d\n&quot;, i);
+    }
+
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+<!-- Задача 16 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">16. <i>Пользователь вводит число. Выведите его квадрат и куб.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №18: Квадрат и куб числа"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int n;
+
+    printf(&quot;Введите число: &quot;);
+    scanf(&quot;%d&quot;, &amp;n);
+
+    printf(&quot;Квадрат: %d\n&quot;, n * n);
+    printf(&quot;Куб: %d\n&quot;, n * n * n);
+
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+<!-- Задача 17 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">17. <i>Пользователь вводит число N. Выведите все числа от 1 до N.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №17: Числа от 1 до N"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int n;
+
+    printf(&quot;Введите N: &quot;);
+    scanf(&quot;%d&quot;, &amp;n);
+
+    for(int i = 1; i &lt;= n; i++) {
+        printf(&quot;%d &quot;, i);
+    }
+
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 18 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">18. <i>Пользователь вводит число. Найдите сумму чисел от 1 до этого числа.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №18: Сумма от 1 до N"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int n, sum = 0;
+
+    printf(&quot;Введите число: &quot;);
+    scanf(&quot;%d&quot;, &amp;n);
+
+    for(int i = 1; i &lt;= n; i++) {
+        sum += i;
+    }
+
+    printf(&quot;Сумма = %d&quot;, sum);
+
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 19 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">19. <i>Пользователь вводит число. Выведите таблицу умножения для этого числа от 1 до 10.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №19: Таблица умножения"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int n;
+
+    printf(&quot;Введите число: &quot;);
+    scanf(&quot;%d&quot;, &amp;n);
+
+    for(int i = 1; i &lt;= 10; i++) {
+        printf(&quot;%d x %d = %d\n&quot;, n, i, n * i);
+    }
+
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 20 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">20. <i>Пользователь вводит число. Найдите количество цифр в нём.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №20: Количество цифр"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int n, count = 0;
+
+    printf(&quot;Введите число: &quot;);
+    scanf(&quot;%d&quot;, &amp;n);
+
+    while(n != 0) {
+        count++;
+        n /= 10;
+    }
+
+    printf(&quot;Количество цифр: %d&quot;, count);
+
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+    </div>
+        
+    <!-- Кнопка наверх -->
+    <a href="#top" class="scroll-top">
+        <span class="arrow">↑</span>
+        <span class="scroll-text">Наверх</span>
+    </a>
+
+    <script>
+        const overlay    = document.getElementById('modalOverlay');
+        const modalBody  = document.getElementById('modalBody');
+        const modalTitle = document.getElementById('modalTitle');
+        const closeBtn   = document.getElementById('modalClose');
+
+        document.querySelectorAll('.modal-trigger').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                modalTitle.textContent = this.dataset.title;
+
+            
+                modalBody.innerHTML = `
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                        </div>
+                        <pre><code>${this.dataset.code}</code></pre>
+                    </div>
+                `;
+
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeBtn.addEventListener('click', closeModal);
+
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) closeModal();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        function closeModal() {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    </script>
+</body>
+</html>

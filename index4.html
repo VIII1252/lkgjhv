@@ -1,14 +1,718 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles_basic_tack.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Базовые задачи C</title>
 </head>
 <body>
-    <div class="div1" style="background-color: darkred;">
-        <a href="index.html"><img src="красный.avif" width="200" height="150" alt="переход на основную страницу" class="img1" ></a>
+    <div class="taskC">
+        <h1 class="Zag">Задачи высокого уровня сложности</h1>
     </div>
+
+    <div class="nav-menu">
+        <a href="index.html" class="nav-button">
+            <svg class="nav-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span class="nav-text">Вернуться к задачам</span>
+        </a>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-window">
+            <div class="modal-header">
+                <span class="modal-title" id="modalTitle">Решение</span>
+                <button class="modal-close" id="modalClose" aria-label="Закрыть">✕</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <div class="tasks-container">
+<!-- Задача 1 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">1. <i>Реализуйте функцию, которая меняет местами два числа через указатели.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №1: Swap через указатели"
+           data-code="#include &lt;stdio.h&gt;
+
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main() {
+    int x, y;
+
+    printf(&quot;Введите два числа: &quot;);
+    scanf(&quot;%d %d&quot;, &amp;x, &amp;y);
+
+    swap(&amp;x, &amp;y);
+
+    printf(&quot;После swap: %d %d&quot;, x, y);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 2 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">2. <i>Найдите максимальный элемент массива через указатели.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №2: Max через указатели"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[] = {3, 8, 1, 9, 2};
+    int *p = arr;
+    int max = *p;
+
+    for(int i = 1; i &lt; 5; i++) {
+        if(*(p + i) &gt; max)
+            max = *(p + i);
+    }
+
+    printf(&quot;Max = %d&quot;, max);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 3 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">3. <i>Посчитайте сумму элементов массива через указатели.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №3: Сумма через указатели"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[] = {1,2,3,4,5};
+    int *p = arr;
+    int sum = 0;
+
+    for(int i = 0; i &lt; 5; i++) {
+        sum += *(p + i);
+    }
+
+    printf(&quot;Sum = %d&quot;, sum);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 4 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">4. <i>Выделите память под массив с помощью malloc и заполните его.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №4: malloc массив"
+           data-code="#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main() {
+    int n;
+    printf(&quot;Введите размер массива: &quot;);
+    scanf(&quot;%d&quot;, &amp;n);
+
+    int *arr = (int*)malloc(n * sizeof(int));
+
+    for(int i = 0; i &lt; n; i++) {
+        scanf(&quot;%d&quot;, &amp;arr[i]);
+    }
+
+    for(int i = 0; i &lt; n; i++) {
+        printf(&quot;%d &quot;, arr[i]);
+    }
+
+    free(arr);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 5 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">5. <i>Создайте структуру Student и выведите её поля.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №5: struct Student"
+           data-code="#include &lt;stdio.h&gt;
+
+struct Student {
+    char name[20];
+    int age;
+};
+
+int main() {
+    struct Student s;
+
+    printf(&quot;Введите имя и возраст: &quot;);
+    scanf(&quot;%s %d&quot;, s.name, &amp;s.age);
+
+    printf(&quot;%s %d&quot;, s.name, s.age);
+
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 6 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">6. <i>Найдите длину строки без strlen.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №6: Длина строки"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    char str[100];
+    int len = 0;
+
+    scanf(&quot;%s&quot;, str);
+
+    while(str[len] != '\0') {
+        len++;
+    }
+
+    printf(&quot;Length = %d&quot;, len);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 7 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">7. <i>Разверните строку (reverse string).</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №7: Reverse string"
+           data-code="#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    char str[100];
+    scanf(&quot;%s&quot;, str);
+
+    int len = strlen(str);
+
+    for(int i = len - 1; i &gt;= 0; i--) {
+        printf(&quot;%c&quot;, str[i]);
+    }
+
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 8 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">8. <i>Проверьте палиндром строки.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №8: Палиндром строки"
+           data-code="#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    char str[100];
+    scanf(&quot;%s&quot;, str);
+
+    int i = 0, j = strlen(str) - 1;
+    int ok = 1;
+
+    while(i &lt; j) {
+        if(str[i] != str[j]) {
+            ok = 0;
+            break;
+        }
+        i++; j--;
+    }
+
+    if(ok)
+        printf(&quot;Palindrome&quot;);
+    else
+        printf(&quot;Not palindrome&quot;);
+
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 9 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">9. <i>Создайте динамический массив и отсортируйте его.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №9: Динамический массив + сортировка"
+           data-code="#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+
+    int *arr = (int*)malloc(n * sizeof(int));
+
+    for(int i = 0; i &lt; n; i++)
+        scanf(&quot;%d&quot;, &amp;arr[i]);
+
+    for(int i = 0; i &lt; n - 1; i++) {
+        for(int j = 0; j &lt; n - i - 1; j++) {
+            if(arr[j] &gt; arr[j + 1]) {
+                int t = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = t;
+            }
+        }
+    }
+
+    for(int i = 0; i &lt; n; i++)
+        printf(&quot;%d &quot;, arr[i]);
+
+    free(arr);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 10 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">10. <i>Найдите количество слов в строке.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №10: Количество слов"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    char str[200];
+    int count = 0;
+
+    fgets(str, sizeof(str), stdin);
+
+    for(int i = 0; str[i] != '\0'; i++) {
+        if(str[i] == ' ')
+            count++;
+    }
+
+    printf(&quot;Words = %d&quot;, count + 1);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+<!-- Задача 11 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">11. <i>Реализуйте рекурсивную функцию вычисления факториала числа.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №11: Факториал (рекурсия)"
+           data-code="#include &lt;stdio.h&gt;
+
+int fact(int n) {
+    if(n &lt;= 1) return 1;
+    return n * fact(n - 1);
+}
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+
+    printf(&quot;Factorial = %d&quot;, fact(n));
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 12 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">12. <i>Найдите НОД двух чисел (алгоритм Евклида).</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №12: НОД (Евклид)"
+           data-code="#include &lt;stdio.h&gt;
+
+int gcd(int a, int b) {
+    while(b != 0) {
+        int t = a % b;
+        a = b;
+        b = t;
+    }
+    return a;
+}
+
+int main() {
+    int a, b;
+    scanf(&quot;%d %d&quot;, &amp;a, &amp;b);
+
+    printf(&quot;GCD = %d&quot;, gcd(a, b));
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 13 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">13. <i>Реализуйте рекурсивное вычисление чисел Фибоначчи.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №13: Фибоначчи"
+           data-code="#include &lt;stdio.h&gt;
+
+int fib(int n) {
+    if(n &lt;= 1) return n;
+    return fib(n - 1) + fib(n - 2);
+}
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+
+    printf(&quot;%d&quot;, fib(n));
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 14 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">14. <i>Найдите сумму элементов массива через указатель и арифметику указателей.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №14: Сумма через pointer arithmetic"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[] = {2,4,6,8,10};
+    int *p = arr;
+    int sum = 0;
+
+    for(int i = 0; i &lt; 5; i++) {
+        sum += *(p + i);
+    }
+
+    printf(&quot;Sum = %d&quot;, sum);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 15 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">15. <i>Создайте структуру Point и вычислите расстояние между двумя точками.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №15: Расстояние между точками"
+           data-code="#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+struct Point {
+    int x;
+    int y;
+};
+
+int main() {
+    struct Point p1, p2;
+
+    scanf(&quot;%d %d&quot;, &amp;p1.x, &amp;p1.y);
+    scanf(&quot;%d %d&quot;, &amp;p2.x, &amp;p2.y);
+
+    float dist = sqrt(pow(p1.x - p2.x, 2) + pow(p1.y - p2.y, 2));
+
+    printf(&quot;Distance = %.2f&quot;, dist);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 16 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">16. <i>Выделите память под структуру с помощью malloc.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №16: malloc struct"
+           data-code="#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+struct Student {
+    int age;
+    float grade;
+};
+
+int main() {
+    struct Student *s = (struct Student*)malloc(sizeof(struct Student));
+
+    scanf(&quot;%d %f&quot;, &amp;s-&gt;age, &amp;s-&gt;grade);
+
+    printf(&quot;%d %.2f&quot;, s-&gt;age, s-&gt;grade);
+
+    free(s);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 17 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">17. <i>Найдите наибольшее число в динамическом массиве.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №17: Max в динамическом массиве"
+           data-code="#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+
+    int *arr = (int*)malloc(n * sizeof(int));
+
+    for(int i = 0; i &lt; n; i++)
+        scanf(&quot;%d&quot;, &amp;arr[i]);
+
+    int max = arr[0];
+
+    for(int i = 1; i &lt; n; i++) {
+        if(arr[i] &gt; max)
+            max = arr[i];
+    }
+
+    printf(&quot;Max = %d&quot;, max);
+
+    free(arr);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 18 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">18. <i>Сравните две строки без strcmp.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №18: Сравнение строк"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    char a[100], b[100];
+    scanf(&quot;%s %s&quot;, a, b);
+
+    int i = 0, equal = 1;
+
+    while(a[i] != '\0' || b[i] != '\0') {
+        if(a[i] != b[i]) {
+            equal = 0;
+            break;
+        }
+        i++;
+    }
+
+    if(equal)
+        printf(&quot;Equal&quot;);
+    else
+        printf(&quot;Not equal&quot;);
+
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 19 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">19. <i>Подсчитайте количество гласных в строке.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №19: Гласные в строке"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    char s[200];
+    int count = 0;
+
+    fgets(s, sizeof(s), stdin);
+
+    for(int i = 0; s[i] != '\0'; i++) {
+        char c = s[i];
+
+        if(c=='a'||c=='e'||c=='i'||c=='o'||c=='u')
+            count++;
+    }
+
+    printf(&quot;Vowels = %d&quot;, count);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 20 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">20. <i>Создайте простую реализацию стека (push/pop).</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №20: Стек (stack)"
+           data-code="#include &lt;stdio.h&gt;
+
+#define SIZE 100
+
+int stack[SIZE];
+int top = -1;
+
+void push(int x) {
+    stack[++top] = x;
+}
+
+int pop() {
+    return stack[top--];
+}
+
+int main() {
+    push(10);
+    push(20);
+    push(30);
+
+    printf(&quot;%d\n&quot;, pop());
+    printf(&quot;%d\n&quot;, pop());
+
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+    </div>
+        
+    <!-- Кнопка наверх -->
+    <a href="#top" class="scroll-top">
+        <span class="arrow">↑</span>
+        <span class="scroll-text">Наверх</span>
+    </a>
+
+    <script>
+        const overlay    = document.getElementById('modalOverlay');
+        const modalBody  = document.getElementById('modalBody');
+        const modalTitle = document.getElementById('modalTitle');
+        const closeBtn   = document.getElementById('modalClose');
+
+        document.querySelectorAll('.modal-trigger').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                modalTitle.textContent = this.dataset.title;
+
+            
+                modalBody.innerHTML = `
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                        </div>
+                        <pre><code>${this.dataset.code}</code></pre>
+                    </div>
+                `;
+
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeBtn.addEventListener('click', closeModal);
+
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) closeModal();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        function closeModal() {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    </script>
 </body>
 </html>

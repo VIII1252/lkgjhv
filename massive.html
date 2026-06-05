@@ -1,13 +1,946 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles_basic_tack.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Базовые задачи C</title>
 </head>
 <body>
-   <div class="div1" style="background-color: darkred;"><a href="index.html"><img src="красный.avif" width="200" height="150" alt="переход на основную страницу" class="img1" ></a></div>
-    <div class="taskC"><h1 style="color:rgb(194, 188, 188);">Тема: Массив</h1></div>
+    <div class="taskC">
+        <h1 class="Zag">Задачи высокого уровня сложности</h1>
+    </div>
+
+    <div class="nav-menu">
+        <a href="index.html" class="nav-button">
+            <svg class="nav-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span class="nav-text">Вернуться к задачам</span>
+        </a>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-window">
+            <div class="modal-header">
+                <span class="modal-title" id="modalTitle">Решение</span>
+                <button class="modal-close" id="modalClose" aria-label="Закрыть">✕</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <div class="tasks-container">
+<!-- Задача 1 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">1. <i>Выведите все элементы массива.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №1: Вывод массива"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5] = {1,2,3,4,5};
+
+    for(int i = 0; i &lt; 5; i++) {
+        printf(&quot;%d &quot;, arr[i]);
+    }
+
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 2 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">2. <i>Найдите сумму элементов массива.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №2: Сумма массива"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5] = {2,4,6,8,10};
+    int sum = 0;
+
+    for(int i = 0; i &lt; 5; i++) {
+        sum += arr[i];
+    }
+
+    printf(&quot;Sum = %d&quot;, sum);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 3 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">3. <i>Найдите максимальный элемент массива.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №3: Максимум массива"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5] = {3, 7, 1, 9, 2};
+    int max = arr[0];
+
+    for(int i = 1; i &lt; 5; i++) {
+        if(arr[i] &gt; max)
+            max = arr[i];
+    }
+
+    printf(&quot;Max = %d&quot;, max);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 4 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">4. <i>Найдите минимальный элемент массива.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №4: Минимум массива"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5] = {5, 2, 8, 1, 9};
+    int min = arr[0];
+
+    for(int i = 1; i &lt; 5; i++) {
+        if(arr[i] &lt; min)
+            min = arr[i];
+    }
+
+    printf(&quot;Min = %d&quot;, min);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 5 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">5. <i>Найдите среднее значение массива.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №5: Среднее значение"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5] = {2,4,6,8,10};
+    int sum = 0;
+
+    for(int i = 0; i &lt; 5; i++) {
+        sum += arr[i];
+    }
+
+    printf(&quot;Average = %.2f&quot;, sum / 5.0);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 6 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">6. <i>Выведите массив в обратном порядке.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №6: Обратный порядок"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5] = {1,2,3,4,5};
+
+    for(int i = 4; i &gt;= 0; i--) {
+        printf(&quot;%d &quot;, arr[i]);
+    }
+
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 7 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">7. <i>Посчитайте количество чётных чисел в массиве.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №7: Чётные числа"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[6] = {1,2,3,4,5,6};
+    int count = 0;
+
+    for(int i = 0; i &lt; 6; i++) {
+        if(arr[i] % 2 == 0)
+            count++;
+    }
+
+    printf(&quot;Even = %d&quot;, count);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 8 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">8. <i>Посчитайте количество нечётных чисел.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №8: Нечётные числа"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[6] = {1,2,3,4,5,6};
+    int count = 0;
+
+    for(int i = 0; i &lt; 6; i++) {
+        if(arr[i] % 2 != 0)
+            count++;
+    }
+
+    printf(&quot;Odd = %d&quot;, count);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 9 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">9. <i>Замените все отрицательные числа на 0.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №9: Замена отрицательных"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5] = {-1, 2, -3, 4, -5};
+
+    for(int i = 0; i &lt; 5; i++) {
+        if(arr[i] &lt; 0)
+            arr[i] = 0;
+    }
+
+    for(int i = 0; i &lt; 5; i++) {
+        printf(&quot;%d &quot;, arr[i]);
+    }
+
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 10 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">10. <i>Сдвиньте массив влево на 1 элемент.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №10: Сдвиг влево"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5] = {1,2,3,4,5};
+    int first = arr[0];
+
+    for(int i = 0; i &lt; 4; i++) {
+        arr[i] = arr[i + 1];
+    }
+
+    arr[4] = first;
+
+    for(int i = 0; i &lt; 5; i++) {
+        printf(&quot;%d &quot;, arr[i]);
+    }
+
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+<!-- Задача 11 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">11. <i>Отсортируйте массив по возрастанию (bubble sort).</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №11: Bubble Sort"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5] = {5,2,9,1,3};
+
+    for(int i = 0; i &lt; 5 - 1; i++) {
+        for(int j = 0; j &lt; 5 - i - 1; j++) {
+            if(arr[j] &gt; arr[j + 1]) {
+                int t = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = t;
+            }
+        }
+    }
+
+    for(int i = 0; i &lt; 5; i++)
+        printf(&quot;%d &quot;, arr[i]);
+
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 12 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">12. <i>Найдите второй по величине элемент массива.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №12: Второй максимум"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5] = {10, 20, 5, 8, 15};
+    int max = -1, second = -1;
+
+    for(int i = 0; i &lt; 5; i++) {
+        if(arr[i] &gt; max) {
+            second = max;
+            max = arr[i];
+        } else if(arr[i] &gt; second) {
+            second = arr[i];
+        }
+    }
+
+    printf(&quot;Second max = %d&quot;, second);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 13 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">13. <i>Удалите элемент массива по индексу.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №13: Удаление элемента"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5] = {1,2,3,4,5};
+    int index = 2;
+
+    for(int i = index; i &lt; 4; i++) {
+        arr[i] = arr[i + 1];
+    }
+
+    for(int i = 0; i &lt; 4; i++)
+        printf(&quot;%d &quot;, arr[i]);
+
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 14 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">14. <i>Вставьте элемент в массив по индексу.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №14: Вставка элемента"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[6] = {1,2,3,4,5};
+    int index = 2, value = 99;
+
+    for(int i = 5; i &gt; index; i--) {
+        arr[i] = arr[i - 1];
+    }
+
+    arr[index] = value;
+
+    for(int i = 0; i &lt; 6; i++)
+        printf(&quot;%d &quot;, arr[i]);
+
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 15 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">15. <i>Найдите количество уникальных элементов массива.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №15: Уникальные элементы"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5] = {1,2,2,3,4};
+    int count = 0;
+
+    for(int i = 0; i &lt; 5; i++) {
+        int unique = 1;
+
+        for(int j = 0; j &lt; i; j++) {
+            if(arr[i] == arr[j]) {
+                unique = 0;
+                break;
+            }
+        }
+
+        if(unique) count++;
+    }
+
+    printf(&quot;Unique = %d&quot;, count);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 16 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">16. <i>Объедините два массива в один.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №16: Объединение массивов"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int a[3] = {1,2,3};
+    int b[3] = {4,5,6};
+    int c[6];
+
+    for(int i = 0; i &lt; 3; i++)
+        c[i] = a[i];
+
+    for(int i = 0; i &lt; 3; i++)
+        c[i + 3] = b[i];
+
+    for(int i = 0; i &lt; 6; i++)
+        printf(&quot;%d &quot;, c[i]);
+
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 17 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">17. <i>Найдите индекс первого вхождения элемента.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №17: Поиск индекса"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5] = {1,2,3,4,5};
+    int x = 3;
+    int index = -1;
+
+    for(int i = 0; i &lt; 5; i++) {
+        if(arr[i] == x) {
+            index = i;
+            break;
+        }
+    }
+
+    printf(&quot;Index = %d&quot;, index);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 18 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">18. <i>Проверьте, отсортирован ли массив.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №18: Проверка сортировки"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5] = {1,2,3,4,5};
+    int sorted = 1;
+
+    for(int i = 0; i &lt; 4; i++) {
+        if(arr[i] &gt; arr[i + 1]) {
+            sorted = 0;
+            break;
+        }
+    }
+
+    printf(sorted ? &quot;Sorted&quot; : &quot;Not sorted&quot;);
+
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 19 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">19. <i>Сдвиг массива вправо на 1 элемент.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №19: Сдвиг вправо"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5] = {1,2,3,4,5};
+
+    for(int i = 4; i &gt; 0; i--) {
+        arr[i] = arr[i - 1];
+    }
+
+    arr[0] = 0;
+
+    for(int i = 0; i &lt; 5; i++)
+        printf(&quot;%d &quot;, arr[i]);
+
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 20 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">20. <i>Найдите количество элементов, больших среднего значения.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №20: Элементы выше среднего"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5] = {1,2,3,4,5};
+    int sum = 0, count = 0;
+
+    for(int i = 0; i &lt; 5; i++)
+        sum += arr[i];
+
+    float avg = sum / 5.0;
+
+    for(int i = 0; i &lt; 5; i++) {
+        if(arr[i] &gt; avg)
+            count++;
+    }
+
+    printf(&quot;Count = %d&quot;, count);
+
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+<!-- Задача 21 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">21. <i>Найдите сумму всех чётных элементов массива.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №21: Сумма чётных элементов"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5] = {1,2,3,4,5};
+    int sum = 0;
+
+    for(int i = 0; i &lt; 5; i++) {
+        if(arr[i] % 2 == 0)
+            sum += arr[i];
+    }
+
+    printf(&quot;Sum = %d&quot;, sum);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 22 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">22. <i>Найдите минимальный элемент массива и его индекс.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №22: Минимум и индекс"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5] = {7,2,9,1,5};
+
+    int min = arr[0];
+    int index = 0;
+
+    for(int i = 1; i &lt; 5; i++) {
+        if(arr[i] &lt; min) {
+            min = arr[i];
+            index = i;
+        }
+    }
+
+    printf(&quot;Min = %d, Index = %d&quot;, min, index);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 23 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">23. <i>Посчитайте количество повторяющихся элементов.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №23: Повторы в массиве"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5] = {1,2,2,3,3};
+    int count = 0;
+
+    for(int i = 0; i &lt; 5; i++) {
+        for(int j = i + 1; j &lt; 5; j++) {
+            if(arr[i] == arr[j]) {
+                count++;
+                break;
+            }
+        }
+    }
+
+    printf(&quot;Duplicates = %d&quot;, count);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 24 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">24. <i>Найдите разницу между максимальным и минимальным элементом.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №24: Разница max-min"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5] = {3,8,1,6,4};
+
+    int min = arr[0], max = arr[0];
+
+    for(int i = 1; i &lt; 5; i++) {
+        if(arr[i] &lt; min) min = arr[i];
+        if(arr[i] &gt; max) max = arr[i];
+    }
+
+    printf(&quot;Difference = %d&quot;, max - min);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 25 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">25. <i>Поменяйте местами первый и последний элемент массива.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №25: Swap элементов"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5] = {1,2,3,4,5};
+
+    int temp = arr[0];
+    arr[0] = arr[4];
+    arr[4] = temp;
+
+    for(int i = 0; i &lt; 5; i++)
+        printf(&quot;%d &quot;, arr[i]);
+
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 26 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">26. <i>Подсчитайте количество нулей в массиве.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №26: Количество нулей"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[6] = {0,1,0,2,0,3};
+    int count = 0;
+
+    for(int i = 0; i &lt; 6; i++) {
+        if(arr[i] == 0)
+            count++;
+    }
+
+    printf(&quot;Zeros = %d&quot;, count);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 27 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">27. <i>Создайте массив из квадратов чисел от 1 до 10.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №27: Квадраты чисел"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[10];
+
+    for(int i = 0; i &lt; 10; i++) {
+        arr[i] = (i + 1) * (i + 1);
+    }
+
+    for(int i = 0; i &lt; 10; i++)
+        printf(&quot;%d &quot;, arr[i]);
+
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 28 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">28. <i>Проверка: есть ли в массиве отрицательные числа.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №28: Поиск отрицательных"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5] = {1,-2,3,4,5};
+    int found = 0;
+
+    for(int i = 0; i &lt; 5; i++) {
+        if(arr[i] &lt; 0) {
+            found = 1;
+            break;
+        }
+    }
+
+    printf(found ? &quot;Есть отрицательные&quot; : &quot;Нет отрицательных&quot;);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 29 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">29. <i>Найдите сумму элементов на чётных индексах.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №29: Чётные индексы"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[6] = {1,2,3,4,5,6};
+    int sum = 0;
+
+    for(int i = 0; i &lt; 6; i += 2) {
+        sum += arr[i];
+    }
+
+    printf(&quot;Sum = %d&quot;, sum);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 30 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">30. <i>Проверка: есть ли в массиве заданное число.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №30: Поиск числа"
+           data-code="#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5] = {10,20,30,40,50};
+    int x = 30;
+    int found = 0;
+
+    for(int i = 0; i &lt; 5; i++) {
+        if(arr[i] == x) {
+            found = 1;
+            break;
+        }
+    }
+
+    printf(found ? &quot;Found&quot; : &quot;Not found&quot;);
+    return 0;
+}">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+    </div>
+        
+    <!-- Кнопка наверх -->
+    <a href="#top" class="scroll-top">
+        <span class="arrow">↑</span>
+        <span class="scroll-text">Наверх</span>
+    </a>
+
+    <script>
+        const overlay    = document.getElementById('modalOverlay');
+        const modalBody  = document.getElementById('modalBody');
+        const modalTitle = document.getElementById('modalTitle');
+        const closeBtn   = document.getElementById('modalClose');
+
+        document.querySelectorAll('.modal-trigger').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                modalTitle.textContent = this.dataset.title;
+
+            
+                modalBody.innerHTML = `
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                        </div>
+                        <pre><code>${this.dataset.code}</code></pre>
+                    </div>
+                `;
+
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeBtn.addEventListener('click', closeModal);
+
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) closeModal();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        function closeModal() {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    </script>
 </body>
 </html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="styles_basic_tack.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сложные задачи Python</title>
+</head>
+<body>
+    <div class="taskC">
+        <h1 class="Zag">Сложные задачи</h1>
+    </div>
+
+    <div class="nav-menu">
+        <a href="index_python.html" class="nav-button">
+            <svg class="nav-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span class="nav-text">Вернуться к задачам</span>
+        </a>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-window">
+            <div class="modal-header">
+                <span class="modal-title" id="modalTitle">Решение</span>
+                <button class="modal-close" id="modalClose" aria-label="Закрыть">✕</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <div class="tasks-container">
+<!-- Задача 1 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">1. <i>Найдите НОД двух чисел (алгоритм Евклида).</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №1: НОД"
+           data-code="a, b = map(int, input().split())
+while b:
+    a, b = b, a % b
+print(a)">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 2 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">2. <i>Найдите НОК двух чисел.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №2: НОК"
+           data-code="import math
+a, b = map(int, input().split())
+print(a * b // math.gcd(a, b))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 3 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">3. <i>Проверьте, является ли число простым (оптимально).</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №3: Простое число"
+           data-code="n = int(input())
+if n &lt; 2:
+    print(False)
+else:
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            print(False)
+            break
+    else:
+        print(True)">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 4 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">4. <i>Фибоначчи через рекурсию.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №4: Фибоначчи"
+           data-code="def f(n):
+    if n &lt;= 1:
+        return n
+    return f(n-1) + f(n-2)
+
+n = int(input())
+print(f(n))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 5 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">5. <i>Бинарный поиск в отсортированном списке.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №5: Бинарный поиск"
+           data-code="arr = list(map(int, input().split()))
+x = int(input())
+
+l, r = 0, len(arr) - 1
+found = False
+
+while l &lt;= r:
+    m = (l + r) // 2
+    if arr[m] == x:
+        found = True
+        break
+    elif arr[m] &lt; x:
+        l = m + 1
+    else:
+        r = m - 1
+
+print(found)">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 6 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">6. <i>Подсчитайте количество уникальных элементов.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №6: Уникальные"
+           data-code="arr = list(map(int, input().split()))
+print(len(set(arr)))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 7 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">7. <i>Проверка баланса скобок.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №7: Скобки"
+           data-code="s = input()
+stack = []
+
+for c in s:
+    if c == '(':
+        stack.append(c)
+    elif c == ')':
+        if not stack:
+            print(False)
+            break
+        stack.pop()
+else:
+    print(len(stack) == 0)">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 8 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">8. <i>Разверните список без reversed().</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №8: Реверс"
+           data-code="arr = list(map(int, input().split()))
+res = []
+
+for i in range(len(arr)-1, -1, -1):
+    res.append(arr[i])
+
+print(res)">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 9 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">9. <i>Сумма всех простых чисел до N.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №9: Сумма простых"
+           data-code="n = int(input())
+
+def is_prime(x):
+    if x &lt; 2:
+        return False
+    for i in range(2, int(x**0.5)+1):
+        if x % i == 0:
+            return False
+    return True
+
+print(sum(i for i in range(n+1) if is_prime(i)))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 10 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">10. <i>Поиск второго максимума.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №10: Второй максимум"
+           data-code="arr = list(set(map(int, input().split())))
+arr.sort()
+print(arr[-2])">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+    </div>
+        
+    <!-- Кнопка наверх -->
+    <a href="#top" class="scroll-top">
+        <span class="arrow">↑</span>
+        <span class="scroll-text">Наверх</span>
+    </a>
+
+    <script>
+        const overlay    = document.getElementById('modalOverlay');
+        const modalBody  = document.getElementById('modalBody');
+        const modalTitle = document.getElementById('modalTitle');
+        const closeBtn   = document.getElementById('modalClose');
+
+        document.querySelectorAll('.modal-trigger').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                modalTitle.textContent = this.dataset.title;
+
+            
+                modalBody.innerHTML = `
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                        </div>
+                        <pre><code>${this.dataset.code}</code></pre>
+                    </div>
+                `;
+
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeBtn.addEventListener('click', closeModal);
+
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) closeModal();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        function closeModal() {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    </script>
+</body>
+</html>

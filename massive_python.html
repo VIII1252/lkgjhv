@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="styles_basic_tack.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сложные задачи Python</title>
+</head>
+<body>
+    <div class="taskC">
+        <h1 class="Zag">Сложные задачи</h1>
+    </div>
+
+    <div class="nav-menu">
+        <a href="index_python.html" class="nav-button">
+            <svg class="nav-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span class="nav-text">Вернуться к задачам</span>
+        </a>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-window">
+            <div class="modal-header">
+                <span class="modal-title" id="modalTitle">Решение</span>
+                <button class="modal-close" id="modalClose" aria-label="Закрыть">✕</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <div class="tasks-container">
+<!-- Задача 1 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">1. <i>Найдите сумму всех элементов массива.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №1: Сумма массива"
+           data-code="arr = list(map(int, input().split()))
+print(sum(arr))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 2 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">2. <i>Найдите максимальный элемент массива.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №2: Максимум"
+           data-code="arr = list(map(int, input().split()))
+print(max(arr))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 3 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">3. <i>Найдите минимальный элемент массива.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №3: Минимум"
+           data-code="arr = list(map(int, input().split()))
+print(min(arr))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 4 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">4. <i>Посчитайте количество чётных элементов.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №4: Чётные"
+           data-code="arr = list(map(int, input().split()))
+print(sum(1 for x in arr if x % 2 == 0))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 5 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">5. <i>Посчитайте количество нечётных элементов.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №5: Нечётные"
+           data-code="arr = list(map(int, input().split()))
+print(sum(1 for x in arr if x % 2 != 0))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 6 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">6. <i>Удалите дубликаты из массива.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №6: Уникальные"
+           data-code="arr = list(map(int, input().split()))
+print(list(set(arr)))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 7 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">7. <i>Отсортируйте массив по возрастанию.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №7: Сортировка"
+           data-code="arr = list(map(int, input().split()))
+print(sorted(arr))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 8 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">8. <i>Отсортируйте массив по убыванию.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №8: Сортировка ↓"
+           data-code="arr = list(map(int, input().split()))
+print(sorted(arr, reverse=True))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 9 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">9. <i>Найдите второй по величине элемент.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №9: Второй максимум"
+           data-code="arr = list(set(map(int, input().split())))
+arr.sort()
+print(arr[-2])">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 10 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">10. <i>Найдите второй минимальный элемент.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №10: Второй минимум"
+           data-code="arr = list(set(map(int, input().split())))
+arr.sort()
+print(arr[1])">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 11 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">11. <i>Разверните массив без reverse().</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №11: Реверс"
+           data-code="arr = list(map(int, input().split()))
+print(arr[::-1])">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 12 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">12. <i>Посчитайте сумму всех элементов на нечётных индексах.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №12: Нечётные индексы"
+           data-code="arr = list(map(int, input().split()))
+print(sum(arr[i] for i in range(len(arr)) if i % 2 != 0))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 13 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">13. <i>Посчитайте количество уникальных элементов.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №13: Уникальные"
+           data-code="arr = list(map(int, input().split()))
+print(len(set(arr)))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 14 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">14. <i>Найдите элемент, который встречается чаще всего.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №14: Частый элемент"
+           data-code="from collections import Counter
+
+arr = list(map(int, input().split()))
+print(Counter(arr).most_common(1)[0][0])">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 15 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">15. <i>Проверьте, есть ли число в массиве.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №15: Поиск"
+           data-code="arr = list(map(int, input().split()))
+x = int(input())
+print(x in arr)">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 16 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">16. <i>Замените все отрицательные числа на 0.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №16: Замена"
+           data-code="arr = list(map(int, input().split()))
+print([0 if x &lt; 0 else x for x in arr])">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 17 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">17. <i>Найдите разницу max - min.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №17: Разница"
+           data-code="arr = list(map(int, input().split()))
+print(max(arr) - min(arr))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 18 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">18. <i>Проверьте, отсортирован ли массив.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №18: Проверка сортировки"
+           data-code="arr = list(map(int, input().split()))
+print(arr == sorted(arr))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 19 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">19. <i>Сдвиг массива вправо на 1 элемент.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №19: Сдвиг"
+           data-code="arr = list(map(int, input().split()))
+print([arr[-1]] + arr[:-1])">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 20 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">20. <i>Объедините два массива.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №20: Объединение"
+           data-code="a = list(map(int, input().split()))
+b = list(map(int, input().split()))
+print(a + b)">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+    </div>
+        
+    <!-- Кнопка наверх -->
+    <a href="#top" class="scroll-top">
+        <span class="arrow">↑</span>
+        <span class="scroll-text">Наверх</span>
+    </a>
+
+    <script>
+        const overlay    = document.getElementById('modalOverlay');
+        const modalBody  = document.getElementById('modalBody');
+        const modalTitle = document.getElementById('modalTitle');
+        const closeBtn   = document.getElementById('modalClose');
+
+        document.querySelectorAll('.modal-trigger').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                modalTitle.textContent = this.dataset.title;
+
+            
+                modalBody.innerHTML = `
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                        </div>
+                        <pre><code>${this.dataset.code}</code></pre>
+                    </div>
+                `;
+
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeBtn.addEventListener('click', closeModal);
+
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) closeModal();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        function closeModal() {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    </script>
+</body>
+</html>

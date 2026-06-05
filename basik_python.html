@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="styles_basic_tack.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Базовые задачи Python</title>
+</head>
+<body>
+    <div class="taskC">
+        <h1 class="Zag">Базовые задачи</h1>
+    </div>
+
+    <div class="nav-menu">
+        <a href="index_python.html" class="nav-button">
+            <svg class="nav-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span class="nav-text">Вернуться к задачам</span>
+        </a>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-window">
+            <div class="modal-header">
+                <span class="modal-title" id="modalTitle">Решение</span>
+                <button class="modal-close" id="modalClose" aria-label="Закрыть">✕</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <div class="tasks-container">
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">1. <i>Проверьте, является ли строка палиндромом.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №1: Палиндром"
+           data-code="s = input().replace(&quot; &quot;, &quot;&quot;).lower()
+print(s == s[::-1])">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">2. <i>Найдите факториал числа.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №2: Факториал"
+           data-code="n = int(input())
+res = 1
+
+for i in range(1, n + 1):
+    res *= i
+
+print(res)">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">3. <i>Подсчитайте количество гласных в строке.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №3: Гласные"
+           data-code="s = input().lower()
+v = &quot;aeiouаеёиоуыэюя&quot;
+print(sum(1 for c in s if c in v))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">4. <i>Найдите максимальное и минимальное число в списке.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №4: Min и Max"
+           data-code="arr = list(map(int, input().split()))
+print(min(arr), max(arr))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">5. <i>Подсчитайте количество слов в строке.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №5: Количество слов"
+           data-code="print(len(input().split()))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">6. <i>Проверьте, является ли число степенью двойки.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №6: Степень двойки"
+           data-code="n = int(input())
+print(n &gt; 0 and (n &amp; (n - 1)) == 0)">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">7. <i>Выведите строку в обратном порядке.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №7: Реверс строки"
+           data-code="print(input()[::-1])">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">8. <i>Найдите сумму чётных чисел до N.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №8: Сумма чётных"
+           data-code="n = int(input())
+print(sum(i for i in range(1, n+1) if i % 2 == 0))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">9. <i>Найдите второй по величине элемент списка.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №9: Второй максимум"
+           data-code="arr = list(set(map(int, input().split())))
+arr.sort()
+print(arr[-2])">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">10. <i>Посчитайте сумму цифр числа.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №10: Сумма цифр"
+           data-code="n = input()
+print(sum(int(i) for i in n if i.isdigit()))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+        <!-- Задача 11 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">11. <i>Найдите сумму всех чисел от 1 до N.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №11: Сумма от 1 до N"
+           data-code="n = int(input())
+print(n * (n + 1) // 2)">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 12 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">12. <i>Проверьте, является ли число простым.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №12: Простое число"
+           data-code="n = int(input())
+if n &lt; 2:
+    print(False)
+else:
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            print(False)
+            break
+    else:
+        print(True)">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 13 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">13. <i>Найдите количество цифр в числе.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №13: Количество цифр"
+           data-code="print(len(str(abs(int(input())))))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 14 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">14. <i>Найдите максимум из трёх чисел.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №14: Максимум"
+           data-code="print(max(map(int, input().split())))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 15 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">15. <i>Выведите числа от 1 до N.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №15: Числа от 1 до N"
+           data-code="n = int(input())
+for i in range(1, n+1):
+    print(i, end=&quot; &quot;)">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 16 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">16. <i>Проверьте, является ли строка палиндромом (без пробелов).</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №16: Палиндром"
+           data-code="s = input().replace(&quot; &quot;, &quot;&quot;).lower()
+print(s == s[::-1])">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 17 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">17. <i>Посчитайте сумму чётных чисел в списке.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №17: Сумма чётных"
+           data-code="arr = list(map(int, input().split()))
+print(sum(x for x in arr if x % 2 == 0))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 18 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">18. <i>Найдите минимальное число в списке.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №18: Минимум"
+           data-code="print(min(map(int, input().split())))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 19 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">19. <i>Посчитайте количество гласных в строке.</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №19: Гласные"
+           data-code="s = input().lower()
+v = &quot;aeiouаеёиоуыэюя&quot;
+print(sum(1 for c in s if c in v))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+
+<!-- Задача 20 -->
+<div class="task-item">
+    <div class="answer">
+        <p class="potvet">20. <i>Переверните число (123 → 321).</i></p>
+    </div>
+    <div class="otvet1-index2">
+        <a class="aotvet modal-trigger" href="#"
+           data-title="Задача №20: Переворот числа"
+           data-code="n = input()
+print(int(n[::-1]))">
+            Посмотреть решение →
+        </a>
+    </div>
+</div>
+    </div>
+        
+    <!-- Кнопка наверх -->
+    <a href="#top" class="scroll-top">
+        <span class="arrow">↑</span>
+        <span class="scroll-text">Наверх</span>
+    </a>
+
+    <script>
+        const overlay    = document.getElementById('modalOverlay');
+        const modalBody  = document.getElementById('modalBody');
+        const modalTitle = document.getElementById('modalTitle');
+        const closeBtn   = document.getElementById('modalClose');
+
+        document.querySelectorAll('.modal-trigger').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                modalTitle.textContent = this.dataset.title;
+
+            
+                modalBody.innerHTML = `
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                        </div>
+                        <pre><code>${this.dataset.code}</code></pre>
+                    </div>
+                `;
+
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeBtn.addEventListener('click', closeModal);
+
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) closeModal();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        function closeModal() {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    </script>
+</body>
+</html>
